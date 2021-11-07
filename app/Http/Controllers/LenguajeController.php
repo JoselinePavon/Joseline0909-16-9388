@@ -31,7 +31,7 @@ class LenguajeController extends Controller
     public function listado(){
         $lenguaje['lenguajes'] = Lenguaje::paginate(6);
 
-        return view('lenguaje.listadoLenguaje', $lenguaje);
+        return view('lenguaje.listado', $lenguaje);
     }
 
     //Guardar lenguajes
@@ -42,7 +42,7 @@ class LenguajeController extends Controller
     }
 
     //Edicion de lenguajes
-    public function edit(Request $request, $id){
+    public function editlenguaje(Request $request, $id){
         $dataLeng = request()->except((['_token','_method']));
         Lenguaje::where('id', '=', $id)->update($dataLeng);
 

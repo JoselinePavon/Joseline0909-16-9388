@@ -2,8 +2,6 @@
 @section('contenido')
 
 
-
-@section('content')
     <div class="container ml-5">
         <div class="row justify-content-center">
             <div class="col-md-6 mt-5 ml-5">
@@ -21,7 +19,7 @@
 
                 <br>
                 <div class="card">
-                    <form action="{{ url ('/lenguaje/save') }}" method="POST">
+                    <form action="{{url('/lenguaje/listado')}}" method="POST">
                         @csrf
                         <div class="card-header text-center text-white bg-info">
                             <h4>CREAR LENGUAJE</h4>

@@ -27,3 +27,14 @@ Route::get('/edit/{id}', 'MonedaController@edit')->name('edit');
 
 //ruta para eliminar criptomoneda
 Route::delete('/delete/{id}','MonedaController@delete')->name('delete');
+
+
+
+//ruta de registrar un leguaje
+Route::get("/lenguaje/crear", "LenguajeController@createForm");
+
+//ruta para la opcion de lenguaje
+route::get('lenguaje/listado', 'lenguajeController@listado')->name('listado');
+
+//ruta para guardar lenguaje
+Route::post("/lenguaje/save", "lenguajeController@save")->name("save");
