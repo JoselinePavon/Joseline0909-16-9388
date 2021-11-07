@@ -51,6 +51,17 @@
                             </div>
 
                             <div class="row form-group">
+                                <label for="" class="col-3">Lenguaje Utilizado:</label>
+                                <select name="lenguaje" class="form-control col-md-8" >
+                                    <option value="" class="text-center"> Seleccione el Lenguaje </option>
+
+                                    @foreach( $lenguaje as $lenguajes)
+                                        <option value="{{$lenguajes->id}}" class="text-center"> {{$lenguajes->descripcion}}  </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="row form-group">
                                 <button type="submit" class="btn btn-outline-success col-md-4 offset-2 mr-3">Guardar</button>
                                 <a class="btn btn-outline-danger btn-xs col-md-4" href=" {{ url('/') }}">Cancelar</a>
                             </div>
