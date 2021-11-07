@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// registrar una criptomoneda
+Route::get("/contenedor", "MonedaController@registro");
+
+//Guardar los datos registrados
+Route::post("/save", "MonedaController@save")->name("save");
