@@ -53,7 +53,7 @@
 
                             <div class="row form-group">
                                 <label for="" class="col-3">Lenguaje</label>
-                                <select name="lenguaje_id" class="form-control col-md-8" >
+                                <select name="lenguaje_id" class="form-control col-md-8" value="{{ $coin->lenguaje }}">
                                     <option value="" class="text-center"> Seleccione el Lenguaje </option>
 
                                     @foreach( $lenguaje as $lenguajes)

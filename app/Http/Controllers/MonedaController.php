@@ -83,4 +83,15 @@ class MonedaController extends Controller
         return redirect('/')->with('editar', 'ok');
     }
 
+    //Eliminar criptomoneda
+    public function delete($id){
+
+        $coins = Moneda::findOrFail($id);
+        if(Storage::delete('public/'.$coins->logotipo)){
+            Moneda::destroy($id);
+        }
+
+        return back()->with('criptomonedaEliminado', 'Criptomoneda eliminada');
+    }
+
 }

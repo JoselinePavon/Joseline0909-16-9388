@@ -17,7 +17,7 @@
     <a  href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i> &nbsp;Home</a>
     <a href="{{ url('/') }}"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Libro</a>
     <a  href="{{ url('/contenido')}}"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Registro</a>
-    <a  href=""><i class="fas fa-laptop-code"></i>&nbsp; Lenguajes</a>
+    <a  href="{{ url ('/lenguaje/save') }}"><i class="fas fa-laptop-code"></i>&nbsp; Lenguajes</a>
 
 </div>
 <style>

@@ -40,6 +40,7 @@
                                 </div>
 
                             </td>
+                        </tr>
                             <td>
                                 <!--BOTON DE EDITAR-->
                                 <a href="{{route('edit', $icon->id)}}" class="btn btn-primary mb-1">

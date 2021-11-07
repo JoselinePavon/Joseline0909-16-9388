@@ -56,7 +56,7 @@
                                     <option value="" class="text-center"> Seleccione el Lenguaje </option>
 
                                     @foreach( $lenguaje as $lenguajes)
-                                        <option value="{{$lenguajes->id}}" class="text-center"> {{$lenguajes->descripcion}}  </option>
+                                        <option value="{{$lenguajes->id}}" class="text-center"> {{$lenguajes->descripcion_lenguaje}}  </option>
                                     @endforeach
                                 </select>
                             </div>

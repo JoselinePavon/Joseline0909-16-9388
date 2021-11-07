@@ -24,3 +24,6 @@ Route::post("/save", "MonedaController@save")->name("save");
 
 //ruta para editar usuarios
 Route::get('/edit/{id}', 'MonedaController@edit')->name('edit');
+
+//ruta para eliminar criptomoneda
+Route::delete('/delete/{id}','MonedaController@delete')->name('delete');
