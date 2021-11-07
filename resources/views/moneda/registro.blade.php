@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('contenedor')
+@section('contenido')
 
     <div class="container ml-5">
         <div class="row justify-content-center">
@@ -19,7 +19,7 @@
                 <br><br><br>
                 <div class="card">
                     <form action="{{ url ('save') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
+                        {{csrf_field()}}
                         <div class="card-header text-center text-black">
                             <h4>Registrar Criptomoneda</h4>
                         </div>

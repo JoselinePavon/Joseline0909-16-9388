@@ -1,5 +1,7 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +9,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel=" stylesheet " href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <title>Examen Final</title>
+    <title>Listado-Registro</title>
 </head>
 <body>
+
 <div class="sidebar">
     <a  href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i> &nbsp;Home</a>
-    <a href="#"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Library</a>
-    <a  href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Registry</a>
-    <a  href="#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp; Settings</a>
+    <a href="{{ url('/') }}"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Libro</a>
+    <a  href="{{ url('/contenido')}}"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Registro</a>
+    <a  href=""><i class="fas fa-laptop-code"></i>&nbsp; Lenguajes</a>
+
 </div>
 <style>
     .sidebar {
         height: 100%;
-        width: 250px;
+        width: 280px;
         position: fixed;
         z-index: 1;
         top: 0;
@@ -57,9 +60,10 @@
     }
 
 </style>
-
 <div class="container">
-    @yield('contenedor')
+    @yield('contenido')
 </div>
+
 </body>
 </html>
+

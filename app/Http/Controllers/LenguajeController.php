@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class LenguajeController extends Controller
 {
     //registro del lenguaje
-    public function registrar(){
+    public function crear(){
 
-        return view('lenguaje.createLenguaje');
+        return view('lenguaje.crear');
     }
 
     //Guardar Lenguaje
@@ -24,21 +24,21 @@ class LenguajeController extends Controller
             'descripcion_lenguaje'=>$validator['descripcion_leng']
         ]);
 
-        return redirect('/lenguaje/read')->with('guardar', 'ok');
+        return redirect('/lenguaje/listado')->with('guardar', 'ok');
     }
 
-    //Read Listado de lenguajes
-    public function read(){
-        $language['lenguajes'] = Lenguaje::paginate(7);
+    //Listado de lenguajes
+    public function listado(){
+        $lenguaje['lenguajes'] = Lenguaje::paginate(6);
 
-        return view('lenguaje.readLenguaje', $language);
+        return view('lenguaje.listadoLenguaje', $lenguaje);
     }
 
     //Guardar lenguajes
-    public function updateForm($id){
+    public function guardar($id){
         $lenguajes = Lenguaje::findOrFail($id);
 
-        return view('lenguaje.updateLenguaje', compact( 'lenguajes'));
+        return view('lenguaje.editLenguaje', compact( 'lenguajes'));
     }
 
     //Edicion de lenguajes
@@ -46,7 +46,7 @@ class LenguajeController extends Controller
         $dataLeng = request()->except((['_token','_method']));
         Lenguaje::where('id', '=', $id)->update($dataLeng);
 
-        return redirect('/lenguaje/read')->with('editar', 'ok');
+        return redirect('/lenguaje/editlenguaje')->with('editar', 'ok');
     }
 
     //Delete lenguajes

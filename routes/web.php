@@ -12,14 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//ruta del controlador moneda
+//ruta listar
 Route::get('/', 'MonedaController@listar');
 
 
 // registrar una criptomoneda
-Route::get("/contenedor", "MonedaController@registro");
+Route::get("/contenido", "MonedaController@registro");
 
 //Guardar los datos registrados
 Route::post("/save", "MonedaController@save")->name("save");
 
-//
+//ruta para editar usuarios
+Route::get('/edit/{id}', 'MonedaController@edit')->name('edit');

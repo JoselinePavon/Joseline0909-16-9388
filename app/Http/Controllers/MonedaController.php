@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use app\Models\lenguaje;
+
+use App\Models\lenguaje;
 use App\Models\Moneda;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -13,7 +14,7 @@ class MonedaController extends Controller
     public function registro()
     {
 
-        return view('moneda.registro');
+
         $lenguaje = Lenguaje::all();
         return view('moneda.registro', compact('lenguaje'));
     }
@@ -57,4 +58,29 @@ class MonedaController extends Controller
 
         return view('moneda.listar', compact('coins'));
     }
+
+    //Formulario para actualizar la criptomoneda
+    public function editlenguaje($id){
+        $coin = Moneda::findOrFail($id);
+        $lenguaje= Lenguaje::all();
+
+        return view('moneda.edit', compact('coin', 'lenguaje'));
+    }
+
+    //Edicion de Criptomoneda
+    public function edit(Request $request, $id){
+        $dataCoin = request()->except((['_token','_method']));
+
+        /*foto del usuario*/
+        if($request->hasFile('logotipo')){
+            $coin = Moneda::findOrFail($id);
+            Storage::delete('public/'.$coin->logotipo);
+            $dataCoin ['logotipo'] = $request-> file('logotipo')->store('logotipo','public');
+        }
+
+        Moneda::where('id', '=', $id)->update($dataCoin);
+
+        return redirect('/')->with('editar', 'ok');
+    }
+
 }
