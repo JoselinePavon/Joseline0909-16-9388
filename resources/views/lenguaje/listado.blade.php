@@ -6,21 +6,19 @@
     <div class="container ml-5">
         <div class="row justify-content-center">
             <div class="col-md-10 ml-5">
-                <h2 class="text-center mt-5">LENGUAJES REGISTRADOS</h2>
+                <h2 class="text-center mt-5" style="color: #CD5C5C">LENGUAJES REGISTRADOS</h2>
 
-                <!-- Boton de registro -->
-                <a class="btn btn-outline-success mb-3" href="{{url('/lenguaje/crear')}}"><i class="fas fa-plus-square"></i> Registrar Lenguaje</a>
-
-                <table class="table table-light table-bordered table-hover text-center">
-                    <thead>
-                    <tr>
+               <br><br>
+                <table class="table table-light table-bordered table-hover text-center" style="background-color: #FFF8DC">
+                    <thead style="background-color: #E9967A">
+                    <tr style="color: white">
                         <th>Id</th>
                         <th>Descripcion</th>
                         <th>Acciones</th>
                     </tr>
                     </thead>
 
-                    <tbody class="">
+                    <tbody class="" style="color: lightseagreen">
                     @foreach($lenguajes as $lenguaje)
                         <tr>
                             <td>{{$lenguaje->id}}</td>

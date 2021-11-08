@@ -5,24 +5,32 @@
         <div class="row justify-content-center">
             <div class="col-md-7 mt-5 ml-5">
 
-                <!-- Validacion Errores-->
-                @if($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                    <!--Mensaje Flash        -->
+                    @if(session('usuarioModificado'))
+                        <div class="alert alert-success">
+                            {{ session('usuarioModificado') }}
+                        </div>
+                    @endif
+
+                <!--validacion errores -->
+                    @if($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>@foreach($errors->all() as $errors)
+                                    <li>{{$errors}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+
 
                 <br><br><br>
                 <div class="card">
-                    <form action="{{route('edit',$coin->id)}}"method="POST" enctype="multipart/form-data">
+                    <form action="{{route('edit',$coin->id)}}"method="POST" style="background-color: #FFF8DC" enctype="multipart/form-data">
                         {{csrf_field()}}
                         {{method_field('PATCH')}}
 
-                        <div class="card-header text-center text-white bg-info">
+                        <div class="card-header text-center text-white" style="background-color: #E9967A">
                             <img src="{{ asset('storage').'/'.$coin->logotipo}}" height="80" style="border-radius: 50%">
                             <h4>MODIFICAR USUARIO</h4>
                         </div>
@@ -64,22 +72,24 @@
                             </div>
 
                             <div class="row form-group">
-                                <button type="submit" class="btn btn-outline-success col-md-4 offset-2 mr-3">Modificar</button>
-                                <a class="btn btn-outline-danger btn-xs col-md-4" href=" {{ url('/') }}">Cancelar</a>
+                                <button type="submit" class=" col-md-9 offset-2  btn btn-outline-success">Modificar</button>
+
                             </div>
 
                         </div>
 
                     </form>
-                </div>
 
+                </div>
+                <div>
+
+                    <a class="btn btn-info btn-xs mt-5" href="{{ url('/') }}">&laquo Página Anterior</a>
+                </div>
             </div>
 
         </div>
-
-
-
     </div>
+
 
     </div>
 @endsection

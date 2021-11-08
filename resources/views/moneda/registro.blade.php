@@ -5,23 +5,30 @@
         <div class="row justify-content-center">
             <div class="col-md-7 mt-5 ml-5">
 
-                <!-- Validacion Errores-->
-                @if($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                    <!--Mensaje Flash -->
+                    @if(session('usuarioGuardado'))
+                        <div class="alert alert-success">
+                            {{ session('usuarioGuardado') }}
+                        </div>
+                    @endif
+
+
+                <!--validacion errores -->
+                    @if($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>@foreach($errors->all() as $errors)
+                                    <li>{{$errors}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
                 <br><br><br>
                 <div class="card">
-                    <form action="{{ url ('save') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url ('save') }}" method="POST" style="background-color: #FFF8DC" enctype="multipart/form-data">
                         {{csrf_field()}}
-                        <div class="card-header text-center text-black">
-                            <h4>Registrar Criptomoneda</h4>
+                        <div class="card-header text-center text-white"  style="background-color: #E9967A">
+                            <h4>REGISTRAR CRIPTOMONEDA</h4>
                         </div>
 
                         <div class="card-body">

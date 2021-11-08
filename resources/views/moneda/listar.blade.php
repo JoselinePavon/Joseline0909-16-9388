@@ -5,13 +5,13 @@
     <div class="container ml-5">
         <div class="row justify-content-center">
             <div class="col-md-10 ml-5">
-                <h2 class="text-center mt-5">LIBRO</h2>
+                <h2 class="text-center mt-5" style="color: #CD5C5C" >LIBRO</h2>
 
 
             <br>
                 <table class="table table-light table-bordered table-hover text-center">
-                    <thead>
-                    <tr>
+                    <thead style="background-color: #E9967A">
+                    <tr style="color:white">
                         <th>Logotipo</th>
                         <th>Nombre</th>
                         <th>Precio</th>
@@ -21,7 +21,7 @@
                     </tr>
                     </thead>
 
-                    <tbody class="">
+                    <tbody class="" style="color: lightseagreen">
                     @foreach($coins as $coin)
                         <tr>
                             <td>

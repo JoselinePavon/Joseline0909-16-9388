@@ -44,8 +44,8 @@ class MonedaController extends Controller
             'descripcion' => $validation['descripcion'],
             'lenguaje_id' => $validation['lenguaje']
         ]);
-
-        return back()->with('criptomonedaGuardado', "Criptomoneda Guardada");
+        return redirect('/')->with('Alerta', '¡Criptomoneda Guardada!');
+        ;
     }
 
     //listar Criptomoneda
