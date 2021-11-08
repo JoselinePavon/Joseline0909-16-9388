@@ -7,6 +7,7 @@ use App\Models\lenguaje;
 use App\Models\Moneda;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class MonedaController extends Controller
 {
@@ -32,7 +33,7 @@ class MonedaController extends Controller
 
         //Guardamos el logotipo
         if ($request->hasFile('logotipo')) {
-            $validation['logotipo'] = $request->file('logotipo')->store('logos', 'public');
+            $validation['logotipo'] = $request->file('logotipo')->store('logotipo', 'public');
         }
 
         //Guardado en la tabla
@@ -71,7 +72,7 @@ class MonedaController extends Controller
     public function edit(Request $request, $id){
         $dataCoin = request()->except((['_token','_method']));
 
-        /*foto del usuario*/
+        /*datos y foto actualizar*/
         if($request->hasFile('logotipo')){
             $coin = Moneda::findOrFail($id);
             Storage::delete('public/'.$coin->logotipo);
@@ -80,18 +81,20 @@ class MonedaController extends Controller
 
         Moneda::where('id', '=', $id)->update($dataCoin);
 
-        return redirect('/')->with('editar', 'ok');
+
+        return back()->with('¡Editado exitosamente!');
     }
 
     //Eliminar criptomoneda
     public function delete($id){
 
-        $coins = Moneda::findOrFail($id);
-        if(Storage::delete('public/'.$coins->logotipo)){
+        {
             Moneda::destroy($id);
+            return back()->with('Delete', '¡Criptomoneda Eliminada!');
         }
 
-        return back()->with('criptomonedaEliminado', 'Criptomoneda eliminada');
+
+
     }
 
 }

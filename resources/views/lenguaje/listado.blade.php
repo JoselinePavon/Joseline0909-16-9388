@@ -26,6 +26,11 @@
                             <td>{{$lenguaje->id}}</td>
                             <td>{{$lenguaje->descripcion_lenguaje}}</td>
                             <td>
+                                <div>
+                                    <a href="{{url('/lenguaje/editlenguaje', $lenguaje->id)}}">
+                                        <i class="fas fa-pencil-alt btn btn-outline-primary mb-2 mr-2"></i>
+                                    </a>
+                                </div>
 
                             </td>
                         </tr>

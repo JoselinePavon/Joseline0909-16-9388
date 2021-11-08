@@ -31,19 +31,12 @@
                             <td>$ {{$coin->precio}}</td>
                             <td>{{$coin->descripcion}}</td>
                             <td>{{$coin->descripcion_lenguaje}}</td>
-                            <td>
+
+
+                            <td >
                                 <div class="btn-group">
-                                    <a href="{{url('/edit', $coin->id)}}">
-                                        <i class="fas fa-pencil-alt btn btn-outline-primary mb-2 mr-2"> Actualizar</i>
-                                    </a>
-
-                                </div>
-
-                            </td>
-                        </tr>
-                            <td>
                                 <!--BOTON DE EDITAR-->
-                                <a href="{{route('edit', $icon->id)}}" class="btn btn-primary mb-1">
+                                <a href="{{route('editlenguaje', $coin->id)}}" class="btn btn-primary mb-1">
                                     <i class=" fas fa-pencil-alt"></i>
 
                                 </a>
@@ -57,6 +50,7 @@
                                     </button>
 
                                 </form>
+                                </div>
                             </td>
                         </tr>
                     @endforeach

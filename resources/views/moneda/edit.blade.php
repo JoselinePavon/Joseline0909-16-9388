@@ -18,9 +18,10 @@
 
                 <br><br><br>
                 <div class="card">
-                    <form action="{{route('edit',$coin->id)}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('edit',$coin->id)}}"method="POST" enctype="multipart/form-data">
                         {{csrf_field()}}
                         {{method_field('PATCH')}}
+
                         <div class="card-header text-center text-white bg-info">
                             <img src="{{ asset('storage').'/'.$coin->logotipo}}" height="80" style="border-radius: 50%">
                             <h4>MODIFICAR USUARIO</h4>
